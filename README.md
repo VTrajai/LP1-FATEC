@@ -129,8 +129,102 @@ public class Medicamento {
             System.out.println("Medicamento comum.");
         }
     }
+````
+>Exercício 6
+>Imagem 2
+````
+import java.util.ArrayList;
+import java.util.List;
+
+public class Feira {
+
+    private String horarioFuncionamento;
+    private List<Produto> listaProdutos;
+    private List<Vendedor> vendedores;
+
+    public Feira(String horarioFuncionamento) {
+        this.horarioFuncionamento = horarioFuncionamento;
+        this.listaProdutos = new ArrayList<>();
+        this.vendedores = new ArrayList<>();
+    }
+
+    public String getHorarioFuncionamento() {
+        return horarioFuncionamento;
+    }
+
+    public void setHorarioFuncionamento(String horarioFuncionamento) {
+        this.horarioFuncionamento = horarioFuncionamento;
+    }
+
+    public void adicionarVendedor(Vendedor vendedor) {
+        vendedores.add(vendedor);
+    }
+
+    public void removerVendedor(Vendedor vendedor) {
+        vendedores.remove(vendedor);
+    }
+
+    public void adicionarProduto(Produto produto) {
+        listaProdutos.add(produto);
+    }
+
+    public void listarProdutos() {
+        System.out.println(listaProdutos);
+    }
+}
 
     public void mostrarValidade() {
         System.out.println("Validade: " + validade);
+    }
+}
+
+public class Produto {
+
+    private double preco;
+    private int quantidade;
+    private String origem;
+
+    public Produto(double preco, int quantidade, String origem) {
+        this.preco = preco;
+        this.quantidade = quantidade;
+        this.origem = origem;
+    }
+
+    public void aplicarReajuste(double valor) {
+        preco += valor;
+    }
+
+    public void venderUnidade() {
+        quantidade--;
+    }
+
+    public void mostrarOrigem() {
+        System.out.println("Origem: " + origem);
+    }
+}
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Vendedor {
+
+    private String telefone;
+    private List<Produto> itensVenda;
+
+    public Vendedor(String telefone) {
+        this.telefone = telefone;
+        this.itensVenda = new ArrayList<>();
+    }
+
+    public void adicionarItem(Produto produto) {
+        itensVenda.add(produto);
+    }
+
+    public void removerItem(Produto produto) {
+        itensVenda.remove(produto);
+    }
+
+    public void mostrarTelefone() {
+        System.out.println("Telefone: " + telefone);
     }
 }
