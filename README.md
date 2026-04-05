@@ -59,3 +59,78 @@ public class Main {
     }
 }
 ```
+>Exercício 6
+>imagem 1
+````
+package Main;
+
+public class Farmacia {
+    public String endereco;
+    public int numeroFuncionarios;
+    public double faturamentoDiario;
+
+    public void registrarVenda(double valor) {
+        this.faturamentoDiario += valor;
+        System.out.println("Venda registrada. Faturamento atual: R$ " + faturamentoDiario);
+    }
+
+    public void contratarFuncionario() {
+        this.numeroFuncionarios++;
+        System.out.println("Novo funcionário contratado. Total: " + numeroFuncionarios);
+    }
+
+    public void mostrarEndereco() {
+        System.out.println("Endereço da farmácia: " + endereco);
+    }
+}
+
+package Main;
+
+public class Cliente {
+    public String telefone;
+    public int idade;
+    public boolean possuiReceita;
+
+    public void atualizarTelefone(String novoTelefone) {
+        this.telefone = novoTelefone;
+        System.out.println("Telefone atualizado para: " + telefone);
+    }
+
+    public void apresentarReceita() {
+        this.possuiReceita = true;
+        System.out.println("Receita médica apresentada.");
+    }
+
+    public void verificarMaioridade() {
+        if (idade >= 18) {
+            System.out.println("Cliente maior de idade.");
+        } else {
+            System.out.println("Cliente menor de idade.");
+        }
+    }
+}
+
+package Main;
+
+public class Medicamento {
+    public String fabricante;
+    public String validade;
+    public boolean controlado;
+
+    public void alterarFabricante(String novoFabricante) {
+        this.fabricante = novoFabricante;
+        System.out.println("Fabricante alterado para: " + fabricante);
+    }
+
+    public void verificarControle() {
+        if (controlado) {
+            System.out.println("Medicamento controlado.");
+        } else {
+            System.out.println("Medicamento comum.");
+        }
+    }
+
+    public void mostrarValidade() {
+        System.out.println("Validade: " + validade);
+    }
+}
