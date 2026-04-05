@@ -228,3 +228,107 @@ public class Vendedor {
         System.out.println("Telefone: " + telefone);
     }
 }
+````
+>Exercício 6
+>Imagem 3
+````
+package LP1;
+
+public class SalaoBeleza {
+
+    public static void main(String[] args) {
+
+        LP1.Cliente c1 = new LP1.Cliente();
+        c1.email = "ana@email.com";
+        c1.idade = 28;
+        c1.agendarHorario();
+        c1.exibirEmail();
+
+        System.out.println("---");
+
+        Servico s1 = new Servico();
+        s1.categoria = "Capilar";
+        s1.requerProdutoEspecial = true;
+        s1.nivelComplexidade = 3;
+        s1.informarProdutoEspecial();
+        s1.verificarComplexidade();
+
+        System.out.println("---");
+
+        LP1.Profissional p1 = new LP1.Profissional();
+        p1.anosExperiencia = 8;
+        p1.turno = "Manhã";
+        p1.avaliacao = 4.5;
+        p1.atualizarTurno("Tarde");
+        p1.mostrarExperiencia();
+    }
+}
+
+package LP1;
+
+public class Servico {
+    String categoria;
+    boolean requerProdutoEspecial;
+    int nivelComplexidade;
+
+    public void alterarCategoria(String novaCategoria) {
+        this.categoria = novaCategoria;
+        System.out.println("Categoria alterada para: " + categoria);
+    }
+
+    public void verificarComplexidade() {
+        System.out.println("Nível de complexidade: " + nivelComplexidade);
+    }
+
+    public void informarProdutoEspecial() {
+        if (requerProdutoEspecial) {
+            System.out.println("Este serviço requer produto especial.");
+        } else {
+            System.out.println("Serviço comum.");
+        }
+    }
+}
+
+package LP1;
+
+public class Cliente {
+    String email;
+    int idade;
+    boolean possuiAgendamento;
+
+    public void agendarHorario() {
+        this.possuiAgendamento = true;
+        System.out.println("Horário agendado com sucesso.");
+    }
+
+    public void cancelarAgendamento() {
+        this.possuiAgendamento = false;
+        System.out.println("Agendamento cancelado.");
+    }
+
+    public void exibirEmail() {
+        System.out.println("E-mail do cliente: " + email);
+    }
+}
+
+package LP1;
+
+public class Profissional {
+    int anosExperiencia;
+    String turno;
+    double avaliacao;
+
+    public void atualizarTurno(String novoTurno) {
+        this.turno = novoTurno;
+        System.out.println("Novo turno: " + turno);
+    }
+
+    public void aumentarAvaliacao(double pontos) {
+        this.avaliacao += pontos;
+        System.out.println("Avaliação atual: " + avaliacao);
+    }
+
+    public void mostrarExperiencia() {
+        System.out.println("Experiência: " + anosExperiencia + " anos");
+    }
+}
